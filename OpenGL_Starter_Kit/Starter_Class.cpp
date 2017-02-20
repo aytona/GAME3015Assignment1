@@ -11,8 +11,8 @@
 
 
 
-float rotation_angle = 0.0f;
-float x, y=0;
+float rotation_angle = 0.0;
+float x, y = 0;
 Camera* cam;
 
 void myDisplay(void)
@@ -27,10 +27,24 @@ void myDisplay(void)
 	redTank.setColor(1.0, 0.0, 0.0);
 	redTank.render();*/
 
-    Cube testCube = Cube(glm::rotate(glm::mat4(1.0f), rotation_angle, glm::vec3(1, 1, 0)), 0.5);
-    testCube.setColor(1.0, 0.0, 0.0);
+    /*Cube testCube = Cube(glm::rotate(glm::mat4(1.0), rotation_angle, glm::vec3(1, 0.7, 0.3)), 0.5);
+    testCube.setColor(0.0, 1.0, 0.0);
     testCube.render();
-	glFlush();
+	*/
+
+    //Sphere testSphere = Sphere(glm::rotate(glm::mat4(1.0), rotation_angle, glm::vec3(1, 0.7, 0.3)), 0.5);
+    //testSphere.setColor(0.0, 1.0, 0.0);
+    //testSphere.render();
+
+    /*Cylinder testCylinder = Cylinder(glm::rotate(glm::mat4(1.0), rotation_angle, glm::vec3(1, 0.7, 0.3)), 0.5);
+    testCylinder.setColor(0.0, 1.0, 0.0);
+    testCylinder.render();*/
+
+    Cone testCone = Cone(glm::rotate(glm::mat4(1.0), rotation_angle, glm::vec3(1, 0.7, 0.3)), 0.5);
+    testCone.setColor(0.0, 1.0, 0.0);
+    testCone.render();
+
+    glFlush();
 }
 
 void mouseHandler(int button, int state, int x, int y)
