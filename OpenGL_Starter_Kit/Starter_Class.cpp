@@ -9,8 +9,6 @@
 #include "Cylinder.h"
 #include "Cone.h"
 
-
-
 float rotation_angle = 0.0;
 float x, y = 0;
 Camera* cam;
@@ -36,13 +34,13 @@ void myDisplay(void)
     //testSphere.setColor(0.0, 1.0, 0.0);
     //testSphere.render();
 
-    /*Cylinder testCylinder = Cylinder(glm::rotate(glm::mat4(1.0), rotation_angle, glm::vec3(1, 0.7, 0.3)), 0.5);
+    Cylinder testCylinder = Cylinder(glm::rotate(glm::mat4(1.0), rotation_angle, glm::vec3(1, 0.7, 0.3)), 0.5);
     testCylinder.setColor(0.0, 1.0, 0.0);
-    testCylinder.render();*/
+    testCylinder.render();
 
-    Cone testCone = Cone(glm::rotate(glm::mat4(1.0), rotation_angle, glm::vec3(1, 0.7, 0.3)), 0.5);
+    /*Cone testCone = Cone(glm::rotate(glm::mat4(1.0), rotation_angle, glm::vec3(1, 0.7, 0.3)), 0.5);
     testCone.setColor(0.0, 1.0, 0.0);
-    testCone.render();
+    testCone.render();*/
 
     glFlush();
 }

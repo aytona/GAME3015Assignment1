@@ -5,5 +5,8 @@ Cylinder::Cylinder(glm::mat4 aTransformation, float aScale) : SceneNode(aTransfo
 }
 
 void Cylinder::draw(float scale) {
-
+    GLUquadric *quad;
+    quad = gluNewQuadric();
+    gluQuadricDrawStyle(quad, GLU_LINE);
+    gluCylinder(quad, scale, scale, scale, 8, 8);
 }
