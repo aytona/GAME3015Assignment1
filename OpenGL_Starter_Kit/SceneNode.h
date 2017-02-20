@@ -8,6 +8,8 @@
 #include <vector>
 #include "GL\glut.h"
 
+#define M_PI 3.141592653589;
+
 class SceneNode
 {
 	protected:

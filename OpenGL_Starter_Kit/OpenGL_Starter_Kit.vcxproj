@@ -149,7 +149,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Cone.cpp" />
+    <ClCompile Include="Cube.cpp" />
+    <ClCompile Include="Cylinder.cpp" />
     <ClCompile Include="SceneNode.cpp" />
+    <ClCompile Include="Sphere.cpp" />
     <ClCompile Include="Square.cpp" />
     <ClCompile Include="Starter_Class.cpp" />
     <ClCompile Include="Tank.cpp" />
@@ -157,7 +161,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Cone.h" />
+    <ClInclude Include="Cube.h" />
+    <ClInclude Include="Cylinder.h" />
     <ClInclude Include="SceneNode.h" />
+    <ClInclude Include="Sphere.h" />
     <ClInclude Include="Square.h" />
     <ClInclude Include="Tank.h" />
     <ClInclude Include="Triangle.h" />

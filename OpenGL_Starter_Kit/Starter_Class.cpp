@@ -4,7 +4,10 @@
 #include "Tank.h"
 #include "GL\glut.h"
 #include "Camera.h"
-
+#include "Cube.h"
+#include "Sphere.h"
+#include "Cylinder.h"
+#include "Cone.h"
 
 
 
@@ -20,30 +23,13 @@ void myDisplay(void)
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	
-	
-	Tank redTank = Tank(glm::translate(glm::mat4(1.0f), glm::vec3(x, y, 0)), 0.1);
+	/*Tank redTank = Tank(glm::translate(glm::mat4(0.0), glm::vec3(x, y, 0)), 0.1);
 	redTank.setColor(1.0, 0.0, 0.0);
-	redTank.render();
+	redTank.render();*/
 
-	Tank blueTank = Tank(glm::translate(glm::mat4(1.0f), glm::vec3(-x, y, 0)), 0.1);
-	blueTank.setColor(0.0, 0.0, 1.0);
-	blueTank.render();
-
-	Tank greenTank = Tank(glm::translate(glm::mat4(1.0f), glm::vec3(x, -y, 0)), 0.1);
-	greenTank.setColor(0.0, 1.0, 0.0);
-	greenTank.render();
-
-	Tank whiteTank = Tank(glm::translate(glm::mat4(1.0f), glm::vec3(-x, -y, 0)), 0.1);
-	whiteTank.setColor(1.0, 1.0, 1.0);
-	whiteTank.render();
-
-
-	Tank bigTank = Tank(glm::translate(glm::mat4(1.0f), glm::vec3(x, 0, 0)), 0.2);
-	bigTank.setColor(1.0, 0.0, 1.0);
-	bigTank.render();
-
-
-
+    Cube testCube = Cube(glm::rotate(glm::mat4(1.0f), rotation_angle, glm::vec3(1, 1, 0)), 0.5);
+    testCube.setColor(1.0, 0.0, 0.0);
+    testCube.render();
 	glFlush();
 }
 
@@ -57,7 +43,7 @@ void mouseHandler(int button, int state, int x, int y)
 
 void myIdleFunc()
 {
-	//rotation_angle += 0.01;
+	rotation_angle += 0.0001;
 	x += 0.0001;
 	y -= 0.0001;
 	glutPostRedisplay();
