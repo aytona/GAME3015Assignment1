@@ -34,7 +34,7 @@ void myDisplay(void)
         testCube.render();
     }
 
-    Sphere testSphere = Sphere(glm::rotate(glm::mat4(1.0), rotation_angle, glm::vec3(1, 0.7, 0.3)), 0.5);
+    Sphere testSphere = Sphere(glm::rotate(glm::mat4(1.0), rotation_angle, glm::vec3(1, 0.7, 0.3)), 1, 25, 25);
     if (renderIterator == 1) {
         testSphere.setColor(0.0, 1.0, 0.0, 1.0);
         testSphere.render();
@@ -53,7 +53,7 @@ void myDisplay(void)
     }
 
     Car testCar = Car(glm::rotate(glm::mat4(1.0), rotation_angle, glm::vec3(1, 0.7, 0.3)), 0.3);
-    if (renderIterator == 4) {
+    if (renderIterator == 0) {
         testCar.render();
     }
 
