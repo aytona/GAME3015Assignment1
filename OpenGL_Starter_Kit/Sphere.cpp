@@ -5,5 +5,5 @@ Sphere::Sphere(glm::mat4 aTransformation, float aScale) : SceneNode(aTransformat
 }
 
 void Sphere::draw(float scale) {
-    glutWireSphere(scale, scale * 10, scale * 10);
+    glutWireSphere(scale, scale * 25, scale * 25);
 }

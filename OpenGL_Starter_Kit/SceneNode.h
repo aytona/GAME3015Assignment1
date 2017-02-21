@@ -32,6 +32,5 @@ class SceneNode
 		void SceneNode::setParent(SceneNode* p);
 		void SceneNode::render();
 		virtual void SceneNode::draw(float scale) = 0;
-
 };
 #endif // !SCENENODE_HEADER

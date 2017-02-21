@@ -5,5 +5,5 @@ Cone::Cone(glm::mat4 aTransformation, float aScale) : SceneNode(aTransformation,
 }
 
 void Cone::draw(float scale) {
-    glutWireCone(scale, scale * 2, scale * 10, scale * 10);
+    glutWireCone(scale, scale * 2, scale * 25, scale * 25);
 }

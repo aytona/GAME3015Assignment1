@@ -8,6 +8,7 @@
 #include "Sphere.h"
 #include "Cylinder.h"
 #include "Cone.h"
+#include "Car.h"
 
 float rotation_angle = 0.0;
 float x, y = 0;
@@ -51,6 +52,29 @@ void myDisplay(void)
         testCone.render();
     }
 
+    Car testCar = Car(glm::rotate(glm::mat4(1.0), rotation_angle, glm::vec3(1, 0.7, 0.3)), 0.3);
+    if (renderIterator == 4) {
+        testCar.render();
+    }
+
+    if (renderIterator == 5) {
+        glm::mat4 car1Transform = glm::mat4(1.0);
+        car1Transform = glm::translate(car1Transform, glm::vec3(x, y, 0));
+        car1Transform = glm::rotate(car1Transform, rotation_angle, glm::vec3(1, 0.7, 0.3));
+        Car car1 = Car(car1Transform, 0.1);
+        car1.render();
+        glm::mat4 car2Transform = glm::mat4(1.0);
+        car2Transform = glm::translate(car2Transform, glm::vec3(-x, y, 0));
+        car2Transform = glm::rotate(car2Transform, rotation_angle, glm::vec3(0.7, 1, 0.3));
+        Car car2 = Car(car2Transform, 0.2);
+        car2.render();
+        glm::mat4 car3Transform = glm::mat4(1.0);
+        car3Transform = glm::translate(car3Transform, glm::vec3(x, -y, 0));
+        car3Transform = glm::rotate(car3Transform, rotation_angle, glm::vec3(0.3, 0.7, 1));
+        Car car3 = Car(car3Transform, 0.3);
+        car3.render();
+    }
+
     glFlush();
 }
 
@@ -65,17 +89,21 @@ void mouseHandler(int button, int state, int x, int y)
 void myIdleFunc()
 {
 	rotation_angle += 0.0001;
-	x += 0.0001;
-	y -= 0.0001;
     renderDelay += 0.0001;
     if (renderDelay > 2) {
-        if (renderIterator < 4) {
+        if (renderIterator < 5) {
             renderIterator++;
+            x = 0;
+            y = 0;
         }
         else {
             renderIterator = 0;
         }
         renderDelay = 0;
+    }
+    if (renderIterator >= 5) {
+        x += 0.00003;
+        y -= 0.00003;
     }
 	glutPostRedisplay();
 }
