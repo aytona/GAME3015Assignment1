@@ -23,10 +23,6 @@ void myDisplay(void)
 	glColor3f(1.0, 1.0, 0.0);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	
-	/*Tank redTank = Tank(glm::translate(glm::mat4(0.0), glm::vec3(x, y, 0)), 0.1);
-	redTank.setColor(1.0, 0.0, 0.0);
-	redTank.render();*/
 
     Cube testCube = Cube(glm::rotate(glm::mat4(1.0), rotation_angle, glm::vec3(1, 0.7, 0.3)), 0.5);
     if (renderIterator == 0) {
@@ -53,7 +49,7 @@ void myDisplay(void)
     }
 
     Car testCar = Car(glm::rotate(glm::mat4(1.0), rotation_angle, glm::vec3(1, 0.7, 0.3)), 0.3);
-    if (renderIterator == 0) {
+    if (renderIterator == 4) {
         testCar.render();
     }
 
