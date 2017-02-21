@@ -18,11 +18,12 @@ SceneNode::SceneNode(glm::mat4 aTransformation, float aScale)
 	b = 1.0f;
 }
 
-void SceneNode::setColor(float R, float G, float B)
+void SceneNode::setColor(float R, float G, float B, float A)
 {
 	r = R;
 	g = G;
 	b = B;
+    a = A;
 }
 void SceneNode::setParent(SceneNode* p)
 {
@@ -76,7 +77,7 @@ void SceneNode::render()
 
 
 	//Step Three: Draw myself
-	glColor3f(r, g, b);
+	glColor4f(r, g, b, a);
 	draw(scale);
 
 

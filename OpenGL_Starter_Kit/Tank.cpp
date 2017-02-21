@@ -11,18 +11,18 @@ Tank::Tank(glm::mat4 aTransformation, float scale) : SceneNode(aTransformation, 
 void Tank::draw(float scale)
 {
 	Square body = Square(glm::mat4(1.0f), scale);
-	body.setColor(r, g, b);
+	body.setColor(r, g, b, a);
 	
 	
 	float wheel_offset = scale / 2.0f;
 	Square w1 = Square(glm::translate(glm::mat4(1.0), glm::vec3(-wheel_offset, -wheel_offset, 0.0f)), scale/5.0f);
-	w1.setColor(r, g, b);
+	w1.setColor(r, g, b, a);
 	Square w2 = Square(glm::translate(glm::mat4(1.0), glm::vec3(wheel_offset, wheel_offset, 0.0f)), scale / 5.0f);
-	w2.setColor(r, g, b);
+	w2.setColor(r, g, b, a);
 	Square w3 = Square(glm::translate(glm::mat4(1.0), glm::vec3(-wheel_offset, wheel_offset, 0.0f)), scale / 5.0f);
-	w3.setColor(r, g, b);
+	w3.setColor(r, g, b, a);
 	Square w4 = Square(glm::translate(glm::mat4(1.0), glm::vec3(wheel_offset, -wheel_offset, 0.0f)), scale / 5.0f);
-	w4.setColor(r, g, b);
+	w4.setColor(r, g, b, a);
 	
 
 	body.addChild(&w1);

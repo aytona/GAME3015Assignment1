@@ -15,7 +15,7 @@ class SceneNode
 	std::vector<SceneNode*> children;
 	SceneNode* parent;
 	glm::mat4 transformation;
-	float r, g, b;
+	float r, g, b, a;
 	float scale;
 
 
@@ -25,7 +25,7 @@ class SceneNode
 
 		//Methods
 		void SceneNode::addChild(SceneNode*);
-		void SceneNode::setColor(float r, float g, float b);
+		void SceneNode::setColor(float r, float g, float b, float a);
 		glm::mat4 SceneNode::getTransformationMatrix();
 		std::vector<SceneNode*> getChildren();
 		SceneNode* SceneNode::getParent();

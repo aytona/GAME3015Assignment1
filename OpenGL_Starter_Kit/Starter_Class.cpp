@@ -11,6 +11,8 @@
 
 float rotation_angle = 0.0;
 float x, y = 0;
+float renderDelay = 0.0;
+int renderIterator = 0;
 Camera* cam;
 
 void myDisplay(void)
@@ -25,22 +27,29 @@ void myDisplay(void)
 	redTank.setColor(1.0, 0.0, 0.0);
 	redTank.render();*/
 
-    /*Cube testCube = Cube(glm::rotate(glm::mat4(1.0), rotation_angle, glm::vec3(1, 0.7, 0.3)), 0.5);
-    testCube.setColor(0.0, 1.0, 0.0);
-    testCube.render();
-	*/
+    Cube testCube = Cube(glm::rotate(glm::mat4(1.0), rotation_angle, glm::vec3(1, 0.7, 0.3)), 0.5);
+    if (renderIterator == 0) {
+        testCube.setColor(0.0, 1.0, 0.0, 1.0);
+        testCube.render();
+    }
 
-    //Sphere testSphere = Sphere(glm::rotate(glm::mat4(1.0), rotation_angle, glm::vec3(1, 0.7, 0.3)), 0.5);
-    //testSphere.setColor(0.0, 1.0, 0.0);
-    //testSphere.render();
+    Sphere testSphere = Sphere(glm::rotate(glm::mat4(1.0), rotation_angle, glm::vec3(1, 0.7, 0.3)), 0.5);
+    if (renderIterator == 1) {
+        testSphere.setColor(0.0, 1.0, 0.0, 1.0);
+        testSphere.render();
+    }
 
     Cylinder testCylinder = Cylinder(glm::rotate(glm::mat4(1.0), rotation_angle, glm::vec3(1, 0.7, 0.3)), 0.5);
-    testCylinder.setColor(0.0, 1.0, 0.0);
-    testCylinder.render();
+    if (renderIterator == 2) {
+        testCylinder.setColor(0.0, 1.0, 0.0, 1.0);
+        testCylinder.render();
+    }
 
-    /*Cone testCone = Cone(glm::rotate(glm::mat4(1.0), rotation_angle, glm::vec3(1, 0.7, 0.3)), 0.5);
-    testCone.setColor(0.0, 1.0, 0.0);
-    testCone.render();*/
+    Cone testCone = Cone(glm::rotate(glm::mat4(1.0), rotation_angle, glm::vec3(1, 0.7, 0.3)), 0.5);
+    if (renderIterator == 3) {
+        testCone.setColor(0.0, 1.0, 0.0, 1.0);
+        testCone.render();
+    }
 
     glFlush();
 }
@@ -58,6 +67,16 @@ void myIdleFunc()
 	rotation_angle += 0.0001;
 	x += 0.0001;
 	y -= 0.0001;
+    renderDelay += 0.0001;
+    if (renderDelay > 2) {
+        if (renderIterator < 4) {
+            renderIterator++;
+        }
+        else {
+            renderIterator = 0;
+        }
+        renderDelay = 0;
+    }
 	glutPostRedisplay();
 }
 
